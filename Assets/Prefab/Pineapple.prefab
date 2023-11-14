@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6239826893199281417}
   - component: {fileID: 4603221404160554669}
   - component: {fileID: -322176519082612126}
+  - component: {fileID: -4185543212652423996}
   m_Layer: 0
   m_Name: Pineapple
   m_TagString: Pineapple
@@ -159,5 +160,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d65b6f301fd19b4f9ac6b7671eeff6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4185543212652423996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331954039106293169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94f4cb7cc2b49144bd6d6a2b5042901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

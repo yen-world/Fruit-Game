@@ -873,6 +873,8 @@ MonoBehaviour:
   - {fileID: 331954039106293169, guid: 17823debef4fe0d43b129592885cb09a, type: 3}
   - {fileID: 2953391741880411420, guid: 241c3cfd7e27fe94284f88acbe52d2a5, type: 3}
   - {fileID: 4377622564993986996, guid: 733f3e11686cf6140a77a97d70300bfc, type: 3}
+  guideObject: {fileID: 364609844}
+  collisionFlag: 0
 --- !u!4 &975497513
 Transform:
   m_ObjectHideFlags: 0

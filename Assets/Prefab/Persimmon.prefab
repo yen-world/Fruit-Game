@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1117497805466369845}
   - component: {fileID: 84320397367212569}
   - component: {fileID: -1015070054655098780}
+  - component: {fileID: -984045259727848954}
   m_Layer: 0
   m_Name: Persimmon
   m_TagString: Persimmon
@@ -159,5 +160,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d65b6f301fd19b4f9ac6b7671eeff6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-984045259727848954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626172275623218920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94f4cb7cc2b49144bd6d6a2b5042901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

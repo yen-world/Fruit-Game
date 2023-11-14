@@ -5,17 +5,15 @@ using UnityEngine;
 public class FruitManager : MonoBehaviour
 {
     GameManager theGM;
-    RespownManager theRM;
 
     public GameObject respawnObject;
     GameObject fruitObject;
     public bool waitFlag;
-
+    public bool evolutionFlag;
     // Start is called before the first frame update
     void Start()
     {
         theGM = FindObjectOfType<GameManager>();
-        theRM = FindObjectOfType<RespownManager>();
         CreateFruit();
     }
 
@@ -26,11 +24,17 @@ public class FruitManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                waitFlag = !waitFlag;
+                waitFlag = true;
                 DropFruit();
                 StartCoroutine(WaitCoroutine());
             }
         }
+
+        // if (evolutionFlag)
+        // {
+        //     theFM.EvolutionFruit(collisionPoint, transform.tag);
+        //     evolutionFlag = false;
+        // }
     }
 
     public void CreateFruit()
@@ -42,15 +46,57 @@ public class FruitManager : MonoBehaviour
 
     public void DropFruit()
     {
+        theGM.guideObject.SetActive(false);
         fruitObject.GetComponent<Rigidbody2D>().isKinematic = false;
         fruitObject.transform.parent = null;
     }
 
+    public void EvolutionFruit(Vector2 pos, string level)
+    {
+        print("GG");
+        switch (level)
+        {
+            case "Cherry":
+                Instantiate(theGM.fruitPrefabs[1], pos, Quaternion.identity);
+                break;
+            case "Strawberry":
+                Instantiate(theGM.fruitPrefabs[2], pos, Quaternion.identity);
+                break;
+            case "Grape":
+                Instantiate(theGM.fruitPrefabs[3], pos, Quaternion.identity);
+                break;
+            case "Lemon":
+                Instantiate(theGM.fruitPrefabs[4], pos, Quaternion.identity);
+                break;
+            case "Persimmon":
+                Instantiate(theGM.fruitPrefabs[5], pos, Quaternion.identity);
+                break;
+            case "Apple":
+                Instantiate(theGM.fruitPrefabs[6], pos, Quaternion.identity);
+                break;
+            case "Pear":
+                Instantiate(theGM.fruitPrefabs[7], pos, Quaternion.identity);
+                break;
+            case "Peach":
+                Instantiate(theGM.fruitPrefabs[8], pos, Quaternion.identity);
+                break;
+            case "Pineapple":
+                Instantiate(theGM.fruitPrefabs[9], pos, Quaternion.identity);
+                break;
+            case "Melon":
+                Instantiate(theGM.fruitPrefabs[10], pos, Quaternion.identity);
+                break;
+            case "WaterMelon":
+                break;
+        }
+    }
+
     public IEnumerator WaitCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitUntil(() => theGM.collisionFlag);
+        theGM.collisionFlag = false;
+        waitFlag = false;
         CreateFruit();
-        waitFlag = !waitFlag;
     }
 
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] fruitPrefabs;
+    public int[] fruitLevel;
+    public GameObject guideObject;
+    public bool collisionFlag;
 
     // Start is called before the first frame update
     void Start()

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7485150122623497839}
   - component: {fileID: 4784039049535055975}
   - component: {fileID: -6895212649181497274}
+  - component: {fileID: -7435965994415618183}
   m_Layer: 0
   m_Name: Strawberry
   m_TagString: Strawberry
@@ -159,5 +160,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d65b6f301fd19b4f9ac6b7671eeff6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7435965994415618183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237479951782770004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94f4cb7cc2b49144bd6d6a2b5042901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
