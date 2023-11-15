@@ -8,8 +8,13 @@ public class FruitManager : MonoBehaviour
 
     public GameObject respawnObject;
     GameObject fruitObject;
+    GameObject newFruitObject;
+
     public bool waitFlag;
     public bool evolutionFlag;
+    public Vector2 collisionPoint;
+    public string fruitLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +35,11 @@ public class FruitManager : MonoBehaviour
             }
         }
 
-        // if (evolutionFlag)
-        // {
-        //     theFM.EvolutionFruit(collisionPoint, transform.tag);
-        //     evolutionFlag = false;
-        // }
+        if (evolutionFlag)
+        {
+            EvolutionFruit(collisionPoint, fruitLevel);
+            evolutionFlag = false;
+        }
     }
 
     public void CreateFruit()
@@ -57,36 +62,57 @@ public class FruitManager : MonoBehaviour
         switch (level)
         {
             case "Cherry":
-                Instantiate(theGM.fruitPrefabs[1], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[1], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 1).ToString();
                 break;
             case "Strawberry":
-                Instantiate(theGM.fruitPrefabs[2], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[2], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 3).ToString();
                 break;
             case "Grape":
-                Instantiate(theGM.fruitPrefabs[3], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[3], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 6).ToString();
                 break;
             case "Lemon":
-                Instantiate(theGM.fruitPrefabs[4], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[4], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 10).ToString();
                 break;
             case "Persimmon":
-                Instantiate(theGM.fruitPrefabs[5], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[5], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 15).ToString();
                 break;
             case "Apple":
-                Instantiate(theGM.fruitPrefabs[6], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[6], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 21).ToString();
                 break;
             case "Pear":
-                Instantiate(theGM.fruitPrefabs[7], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[7], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 28).ToString();
                 break;
             case "Peach":
-                Instantiate(theGM.fruitPrefabs[8], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[8], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 36).ToString();
                 break;
             case "Pineapple":
-                Instantiate(theGM.fruitPrefabs[9], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[9], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 45).ToString();
                 break;
             case "Melon":
-                Instantiate(theGM.fruitPrefabs[10], pos, Quaternion.identity);
+                newFruitObject = Instantiate(theGM.fruitPrefabs[10], pos, Quaternion.identity);
+                Destroy(newFruitObject.GetComponent<FirstCollisionCheck>());
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 55).ToString();
                 break;
             case "WaterMelon":
+                theGM.scoreText.text = (int.Parse(theGM.scoreText.text) + 66).ToString();
                 break;
         }
     }

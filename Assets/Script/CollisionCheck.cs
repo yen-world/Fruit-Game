@@ -7,8 +7,7 @@ public class CollisionCheck : MonoBehaviour
     GameManager theGM;
     FruitManager theFM;
 
-    Vector2 collisionPoint;
-    public bool evolutionFlag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +25,10 @@ public class CollisionCheck : MonoBehaviour
     {
         if (other.transform.tag == transform.tag)
         {
-            evolutionFlag = true;
+            theFM.evolutionFlag = true;
             ContactPoint2D contact = other.contacts[0];
-            collisionPoint = contact.point;
-            theFM.EvolutionFruit(collisionPoint, transform.tag);
-            print("GG");
+            theFM.collisionPoint = contact.point;
+            theFM.fruitLevel = transform.tag;
             Destroy(this.gameObject);
         }
     }
