@@ -6,7 +6,7 @@ public class CollisionCheck : MonoBehaviour
 {
     GameManager theGM;
     FruitManager theFM;
-
+    public bool dropCompleteFlag;
 
     // Start is called before the first frame update
     void Start()

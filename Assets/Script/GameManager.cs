@@ -6,7 +6,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] fruitPrefabs;
-    public int[] fruitLevel;
     public GameObject guideObject;
     public bool collisionFlag;
     public TMP_Text scoreText;

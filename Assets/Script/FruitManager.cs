@@ -5,6 +5,7 @@ using UnityEngine;
 public class FruitManager : MonoBehaviour
 {
     GameManager theGM;
+    GameOverCheck theGOC;
 
     public GameObject respawnObject;
     GameObject fruitObject;
@@ -15,10 +16,12 @@ public class FruitManager : MonoBehaviour
     public Vector2 collisionPoint;
     public string fruitLevel;
 
+
     // Start is called before the first frame update
     void Start()
     {
         theGM = FindObjectOfType<GameManager>();
+        theGOC = FindObjectOfType<GameOverCheck>();
         CreateFruit();
     }
 
@@ -44,7 +47,7 @@ public class FruitManager : MonoBehaviour
 
     public void CreateFruit()
     {
-        int randomNumber = Random.Range(0, 5);
+        int randomNumber = Random.Range(6, 11);
         fruitObject = Instantiate(theGM.fruitPrefabs[randomNumber], respawnObject.transform.position, Quaternion.identity, respawnObject.transform);
         fruitObject.GetComponent<Rigidbody2D>().isKinematic = true;
     }
